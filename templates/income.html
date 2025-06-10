@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+ <h1>Add Income or Expense</h1>
+
+  <form action="income" method="POST">
+    <label for="t-type">Type:</label>
+    <select id="t-type" name="t_type" required>
+      <option value="" disabled selected>Select type</option>
+      <option value="Income">Income</option>
+      <option value="Expense">Expense</option>
+    </select>
+    <br><br>
+
+    <label for="category">Category:</label>
+    <input id="category" type="text" name="category" placeholder="Category" required>
+    <br><br>
+
+    <label for="amount">Amount:</label>
+    <input id="amount" type="number" name="amount" step="0.01" placeholder="e.g. 123.45" required>
+    <br><br>
+
+    <!-- Date is added automatically by server; no need for user input -->
+    <button type="submit">Submit</button>
+  </form>
+
+
+{% endblock %}
